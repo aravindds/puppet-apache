@@ -49,6 +49,7 @@ class apache (
 ) inherits ::apache::params {
 
   class { 'apache::install': } ->         ###First install and check if service is running
+  class { 'apache::config': } ~>   ### If any changes on config then user service class
   class { 'apache::service': }
 
 }
