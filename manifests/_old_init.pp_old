@@ -42,13 +42,8 @@
 #
 # Copyright 2017 Your name here, unless otherwise noted.
 #
-class apache (
-  String $package_name = $::apache::params::package_name,
-  String $service_name = $::apache::params::service_name,
+class apache {
 
-) inherits ::apache::params {
-
-  class { 'apache::install': } ->         ###First install and check if service is running
-  class { 'apache::service': }
-
+  class { 'apache::install': }
+  -> class { 'apache::service': }
 }

@@ -1,0 +1,6 @@
+class apache::install {
+ package { 'apache-package':
+  ensure   => present,
+  name     => 'apache2'
+ }
+}

@@ -1,0 +1,7 @@
+class apache::service {
+  service { 'apache-service':
+    ensure  => running,
+    name    => apache2,
+    enable  => true,   ## service to be running after reboot
+ }
+}
